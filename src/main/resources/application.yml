@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://ip:3301/compose_demo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&allowMultiQueries=true&characterencoding=utf8mb4&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+  redis:
+    host: ip
+    port: 6380
+    database: 0
+    password:

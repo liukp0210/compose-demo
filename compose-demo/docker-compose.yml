@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+    mysql:
+     build: ./mysql
+     image: compose-mysql:test
+     container_name: compose-mysql
+     ports:
+      - "3301:3306"
+     volumes:
+      - "/root/temp/compose-demo/conf:/etc/mysql/conf.d"
+      - "/root/temp/compose-demo/logs:/logs"
+      - "/root/temp/compose-demo/data:/var/lib/mysql"
+     command: [
+            '--character-set-server=utf8mb4',
+            '--collation-server=utf8mb4_unicode_ci'
+     ]
+     environment:
+      MYSQL_ROOT_PASSWORD: "root"
+
+    redis:
+      image: redis:latest
+      container_name: compose-redis
+      ports:
+       - "6380:6379"
+      volumes:
+       - "/root/temp/compose-demo/redis_data:/data"
+
+    compose-java:
+     build: ./java
+     image: compose-java:test
+     container_name: compose-java
+     ports:
+      - "8888:8888"
+

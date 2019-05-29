@@ -1,0 +1,1 @@
+INSERT INTO `compose_demo`.`user` (`id`, `age`, `name`, `phone`) VALUES ('4028b8816b018279016b01828add0000', '18', '张三', '13838385438');
